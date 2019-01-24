@@ -1,0 +1,1 @@
+- maybe move grid/cell to a shared location since I can reuse them in both the gameboard and the display on the right to display the next shap
