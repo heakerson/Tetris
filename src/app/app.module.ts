@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { GameStateReducer } from './state/game.reducer';
+import { GameStateReducer } from './store/game.reducer';
+import { GameBoardModule } from './game-board/game-board.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { GameStateReducer } from './state/game.reducer';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({gameState: GameStateReducer})
+    StoreModule.forRoot({gameState: GameStateReducer}),
+    GameBoardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

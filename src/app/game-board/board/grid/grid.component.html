@@ -1,0 +1,7 @@
+<div class="grid-container">
+  <div class="flex-column" *ngFor="let row of heightCounter">
+    <div class="flex-row">
+      <app-block *ngFor="let column of widthCounter" [row]="row" [column]="column"></app-block>
+    </div>
+  </div>
+</div>

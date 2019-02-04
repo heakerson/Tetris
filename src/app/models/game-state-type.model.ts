@@ -1,7 +1,8 @@
 export enum GameStateType {
-    Reset,
-    Started,
-    Paused,
-    Win,
-    Lose
+    Reset = "Reset",
+    Start = "Start",
+    Playing = "Playing",
+    Paused = "Paused",
+    Win = "Win",
+    Lose = "Lose"
 }
