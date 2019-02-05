@@ -2,6 +2,7 @@ import { Action } from '@ngrx/store';
 import { ShapeType } from '../models/shape-type.model';
 import { Block } from '../models/block.model';
 import { Shape } from '../models/shape.model';
+import { Color } from '../models/block-color-type.model';
 
 export enum GameBoardActionTypes {
     SetCurrentShape = '[Game Board] Set Current Shape',
@@ -11,7 +12,8 @@ export enum GameBoardActionTypes {
     ShiftShapeDown = '[Game Board] Shift Shape Down',
     ShiftShapeLeft = '[Game Board] Shift Shape Left',
     ShiftShapeRight = '[Game Board] Shift Shape Right',
-    RotateShape = '[Game Board] Shift Shape'
+    RotateShape = '[Game Board] Shift Shape',
+    UpdateBlock = '[Game Board] Set Block as Current Shape'
 }
 
 export class SetNextShape implements Action {
@@ -28,6 +30,8 @@ export class SetCurrentShape implements Action {
 
 export class PlaceCurrentShape implements Action {
     readonly type = GameBoardActionTypes.PlaceCurrentShape;
+
+    constructor(public payload: Block[]) {}
 }
 
 export class InitializeGridBlocks implements Action {
@@ -52,4 +56,19 @@ export class RotateShape implements Action {
     readonly type = GameBoardActionTypes.RotateShape;
 }
 
-export type GameBoardActionUnion = SetNextShape | SetCurrentShape | InitializeGridBlocks | PlaceCurrentShape | ShiftShapeDown | ShiftShapeLeft | ShiftShapeRight | RotateShape;
+export class UpdateBlock implements Action {
+    readonly type = GameBoardActionTypes.UpdateBlock;
+
+    constructor(public payload: Block) {}
+}
+
+export type GameBoardActionUnion =
+    SetNextShape |
+    SetCurrentShape |
+    InitializeGridBlocks |
+    PlaceCurrentShape |
+    ShiftShapeDown |
+    ShiftShapeLeft |
+    ShiftShapeRight |
+    RotateShape |
+    UpdateBlock;

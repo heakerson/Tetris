@@ -1,1 +1,2 @@
-- maybe move grid/cell to a shared location since I can reuse them in both the gameboard and the display on the right to display the next shap
+- I think the state should have 4 blocks for the current shape and the current color rather than a full model
+- I should dispatch a single block update and view it on the grid
